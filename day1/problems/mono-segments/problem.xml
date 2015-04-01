@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="15" short-name="mono-segments" url="https://polygon.codeforces.com/p/glebshp/mono-segments">
+    <names>
+        <name language="russian" value="Ремонт асфальта"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="russian" path="statements/russian/problem.tex" type="application/x-tex"/>
+        <statement language="russian" path="statements/.pdf/russian/problem.pdf" type="application/pdf"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz" cpu-speed="3600" input-file="" output-file="">
+        <testset name="tests">
+            <time-limit>2000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>30</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test method="manual" sample="true"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test cmd="gen_rand 3 10 0 0 4" method="generated"/>
+                <test cmd="gen_rand 10 2 10 4 10" method="generated"/>
+                <test cmd="gen_rand 30 100 10 20 40" method="generated"/>
+                <test cmd="gen_rand 50 1 100 3 100" method="generated"/>
+                <test cmd="gen_rand 100 2 30 10 60" method="generated"/>
+                <test cmd="gen_rand 300 4 100 40 300" method="generated"/>
+                <test cmd="gen_rand 300 10 40 2 256" method="generated"/>
+                <test cmd="gen_rand 500 1000000000 1000 4 300" method="generated"/>
+                <test cmd="gen_rand 500 1000000000 1000 4 300 4" method="generated"/>
+                <test cmd="gen_rand 500 1 1000 100 500" method="generated"/>
+                <test cmd="gen_rand 1000 2 1000 100 1000" method="generated"/>
+                <test cmd="gen_rand 1000 2 1000 100 1000 10" method="generated"/>
+                <test cmd="gen_rand 1000 123456789 10000 10 1000" method="generated"/>
+                <test cmd="gen_rand 1000 123456789 10000 10 1000 10" method="generated"/>
+                <test cmd="gen_rand 10000 10 10000 70 10000" method="generated"/>
+                <test cmd="gen_rand 100000 0 0 0 100000" method="generated"/>
+                <test cmd="gen_rand 100000 1 10000 3 100000" method="generated"/>
+                <test cmd="gen_rand 100000 1 10000 100 100000" method="generated"/>
+                <test cmd="gen_rand 100000 2 10000 100 100000" method="generated"/>
+                <test cmd="gen_rand 100000 5 1000 1000 100000" method="generated"/>
+                <test cmd="gen_rand 100000 100 1000 100 100000" method="generated"/>
+                <test cmd="gen_rand 100000 1000000 1000 100 100000" method="generated"/>
+                <test cmd="gen_rand 100000 1000000000 1000 100 100000" method="generated"/>
+                <test cmd="gen_rand 100000 1000000000 1000 100 100000 10" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/validate.cpp" type="cpp.g++"/>
+            </executable>
+            <executable>
+                <source path="files/gen_rand.cpp" type="cpp.g++"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::ncmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++"/>
+            <copy path="check.cpp" type="cpp.g++"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/validate.cpp" type="cpp.g++"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/segments-ap-060-cpp98.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/segments-ap-060-py-slow.py" type="python.2"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/segments-ap-060-py.py" type="python.2"/>
+            </solution>
+            <solution tag="failed">
+                <source path="solutions/segments-ap-100-cpp98-rc-left-fail.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="failed">
+                <source path="solutions/segments-ap-100-cpp98-rc-left.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="failed">
+                <source path="solutions/segments-ap-100-cpp98-rc-left0.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="failed">
+                <source path="solutions/segments-ap-100-cpp98-rc-right.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="failed">
+                <source path="solutions/segments-ap-100-cpp98-short.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="main">
+                <source path="solutions/segments-ap-100-cpp98.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="failed">
+                <source path="solutions/segments-ap-100-py-rc-left.py" type="python.2"/>
+            </solution>
+            <solution tag="failed">
+                <source path="solutions/segments-ap-100-py-rc-right.py" type="python.2"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/segments-ap-100-py-slow.py" type="python.2"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/segments-ap-100-py.py" type="python.2"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/segments_ra_fast_and_simple.cpp" type="cpp.g++"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>1</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list>
+            <stress index="1" path="stresses/001"/>
+        </list>
+    </stresses>
+    <documents>
+        <document path="documents/description.txt" type="text/plain"/>
+    </documents>
+    <tags>
+        <tag value="arrays"/>
+        <tag value="idea"/>
+    </tags>
+</problem>

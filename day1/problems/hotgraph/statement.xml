@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<problem
+        package="ru.olympiads"
+        id="A"
+        type="standard">
+  <statement language="ru_RU">
+    <title>Задача Red. Пожар в НИИЧАВО.</title>
+    <description>
+</description>
+  </statement>
+</problem>

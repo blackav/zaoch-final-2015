@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="16" short-name="hotgraph" url="https://polygon.codeforces.com/p/glebshp/hotgraph">
+    <names>
+        <name language="russian" value="Пожар в НИИЧАВО"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="russian" path="statements/russian/problem.tex" type="application/x-tex"/>
+        <statement language="russian" path="statements/.pdf/russian/problem.pdf" type="application/pdf"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz" cpu-speed="3600" input-file="" output-file="">
+        <testset name="tests">
+            <time-limit>15000</time-limit>
+            <memory-limit>536870912</memory-limit>
+            <test-count>6</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test cmd="gen_lindeg --ld 90000 --rd 100000" method="generated"/>
+                <test cmd="gen_lindeg --ld 49000 --rd 50000" method="generated"/>
+                <test cmd="gen_lindeg --ld 29000 --rd 30000" method="generated"/>
+                <test cmd="gen_lindeg --ld 9000 --rd 10000" method="generated"/>
+                <test cmd="gen_megabig" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/mostdist.h" type="h.g++"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/validate.cpp" type="cpp.g++"/>
+            </executable>
+            <executable>
+                <source path="files/gen_megabig.cpp" type="cpp.g++"/>
+            </executable>
+            <executable>
+                <source path="files/gen_lindeg.cpp" type="cpp.g++"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::ncmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++"/>
+            <copy path="check.cpp" type="cpp.g++"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/validate.cpp" type="cpp.g++"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="main">
+                <source path="solutions/clev_qmalpha.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/clev_qmlogm_path.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/clev_qmlogm_segtree.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/clev_qmlogm_set.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/sol_ge_mqlog.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/sol_ge_mqlog_opt.cpp" type="cpp.g++"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/stup_qm2.cpp" type="cpp.g++"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+    <documents>
+        <document path="documents/description.txt" type="text/plain"/>
+    </documents>
+</problem>

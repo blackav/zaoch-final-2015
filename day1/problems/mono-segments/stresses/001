@@ -1,0 +1,1 @@
+{"id":"3c247d05846be90f1dc506659c1026d3","index":1,"scriptPattern":"gen_rand 2 1000000000 0 0 1","inputFile":"segments.in","outputFile":"segments.out","memoryLimit":256,"timeLimit":2000,"totalTimeLimit":120000,"solutionNames":["segments-ap-100-cpp98-rc-left.cpp","segments-ap-100-cpp98.cpp"],"description":""}
