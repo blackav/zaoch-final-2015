@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<problem
+        package="ru.olympiads"
+        id="A"
+        type="standard">
+  <statement language="ru_RU">
+    <title>Печать условия.</title>
+    <description>
+<p>Для посылки запроса на печать условия введите "PRINT" в поле ввода.</p>
+</description>
+  </statement>
+</problem>
